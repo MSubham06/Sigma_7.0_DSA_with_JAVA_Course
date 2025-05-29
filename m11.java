@@ -50,15 +50,15 @@ public class m11 {
     //     System.out.println("Product is " + prod);
     // }
 
-    public static int factorial(int n) {
-        int f = 1;
+    // public static int factorial(int n) {
+    //     int f = 1;
         
-        for(int i=1; i<=n; i++) {
-            f = f * i;
-        }
+    //     for(int i=1; i<=n; i++) {
+    //         f = f * i;
+    //     }
         
-        return f;
-    }
+    //     return f;
+    // }
 
    // for factorial 
     // public static void main(String args[]) {
@@ -69,14 +69,14 @@ public class m11 {
     //     System.out.println("Factorial of " + n + " is " + fact);
     // }
  
-    public static int binCoeff(int n, int r) {
-        int fact_n = factorial(n);
-        int fact_r = factorial(r);
-        int fact_nmr = factorial(n-r);
+    // public static int binCoeff(int n, int r) {
+    //     int fact_n = factorial(n);
+    //     int fact_r = factorial(r);
+    //     int fact_nmr = factorial(n-r);
 
-        int binCoeff = fact_n / (fact_r * fact_nmr);
-        return binCoeff;
-    }
+    //     int binCoeff = fact_n / (fact_r * fact_nmr);
+    //     return binCoeff;
+    // }
 
     // public static void main(String[] args) {
     //     System.out.println("Binomial Coefficient of 5C2 is " + binCoeff(5, 2));
@@ -98,17 +98,51 @@ public class m11 {
     // }
 
     //Fuction overloading using Data Types
-    public static int sum(int a, int b) {
-        return a+b;
-    } 
-    public static float sum(float a, float b) {
-        return a+b;
-    }
-    public static void main(String[] args) {
-        System.out.println("Sum of 2 numbers is " + sum(5, 10));
-        System.out.println("Sum of 3 numbers is " + sum(5.2f,4.5f));
-    }
+    // public static int sum(int a, int b) {
+    //     return a+b;
+    // } 
+    // public static float sum(float a, float b) {
+    //     return a+b;
+    // }
+    // public static void main(String[] args) {
+    //     System.out.println("Sum of 2 numbers is " + sum(5, 10));
+    //     System.out.println("Sum of 3 numbers is " + sum(5.2f,4.5f));
+    // }
 
+
+    //Check if a number is prime or not
+    // public static boolean isPrime(int n) {
+    //     //corner cases
+    //     if (n==2) {
+    //         return true;
+    //     }
+    //     for (int i = 2; i <= n-1; i++) {
+    //         if (n % i == 0) {
+    //             return false;
+                
+    //         }
+    //     } 
+    //     return true;
+    // }
+
+    //optimized
+    public static boolean isPrime(int n) {
+        if (n==2) {
+            return true;
+        }
+        for(int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number to check its a Prime number or Not : ");
+        int n = sc.nextInt();
+        System.out.print(isPrime(n));
+    }
 
 
 }

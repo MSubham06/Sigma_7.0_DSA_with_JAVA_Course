@@ -139,26 +139,50 @@ public class m11 {
     // System.out.print(isPrime(n));
     // }
 
-    // Convert from Binary to Decimal
-    public static void binToDec(int binNum) {
-        int mynum = binNum;
-        int pow = 0;
-        int decNum = 0;
+    // // Convert from Binary to Decimal
+    // public static void binToDec(int binNum) {
+    //     int mynum = binNum;
+    //     int pow = 0;
+    //     int decNum = 0;
 
-        while(binNum > 0 ){
-            int lastDigit = binNum % 10;
-            decNum = decNum + (lastDigit * (int)Math.pow(2,pow));
+    //     while(binNum > 0 ){
+    //         int lastDigit = binNum % 10;
+    //         decNum = decNum + (lastDigit * (int)Math.pow(2,pow));
+    //         pow++;
+    //         binNum /= 10;
+
+    //     }
+    //     System.out.println("Decimal Number of " + mynum +" is " + decNum);  
+        
+    // }
+    // public static void main(String args[]) {
+    //     Scanner sc = new Scanner(System.in);
+    //     int binNum = sc.nextInt();
+    //     binToDec(binNum);
+
+    // }
+
+
+    // Convert from Decimal to Binary=
+    public static void DecToBin(int n) {
+        int mynum = n;
+        int pow = 0;
+        int BinNum = 0;
+
+        while(n > 0 ){
+            int rem = n % 2;
+            BinNum = BinNum + (rem * (int)Math.pow(10,pow));
             pow++;
-            binNum /= 10;
+            n = n / 2;
 
         }
-        System.out.println("Decimal Number of " + mynum +" is " + decNum);  
+        System.out.println("Decimal Number of " + mynum +" is " + BinNum);  
         
     }
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        int binNum = sc.nextInt();
-        binToDec(binNum);
+        int n = sc.nextInt();
+        DecToBin(n);
 
     }
 
